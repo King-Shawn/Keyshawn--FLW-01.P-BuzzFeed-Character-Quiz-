@@ -16,13 +16,21 @@ function buzzfeedQuiz() {
   let q1Score;
   let q2Score;
   let q3Score;
-
+  let state1 = document.createElement("img")
+  let state2 = document.createElement("img")
+  let state3 = document.createElement("img")  
+  let state4 = document.createElement("img")
+  
   button.onclick = function() {
 
     // task 6: Declare user input variables for each of your questions. If you have three questions, you should have three variables. These variables should equal the value of the user input for each question.
   let userInput1 = q1.value;
   let userInput2 = q2.value;
-  let userInput3 = q2.value;
+  let userInput3 = q3.value;
+  state1.src = "https://state.1keydata.com/indiana-state-map.jpg";
+  state2.src = "https://besthotelshome.com/wp-content/uploads/2021/02/Tourist-Map-of-Minnesota.-Travel-and-Attractions.jpg";
+  state3.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/New_York_regions_map.png/1200px-New_York_regions_map.png";
+  state4.src = "https://saddlemt.com/assets/images/715dtrvyaol_sl1500_.jpg";
     
     // task 7: create a conditional statement for the responses to Question 1 based on the user input.
   if (userInput1 === "Summer"){
@@ -65,20 +73,20 @@ function buzzfeedQuiz() {
 
     // task 11: create a conditional statement for the result to the quiz based on the total score. Using string interpolation, display these to the page: the result, an image that corresponds and a message to go with it.
     if (totalScore <= 4){
-      displayResult.innerHTML = "Indiana bests fits you"; 
-      imgSrc.src = "https://www.factmonster.com/sites/infoplease.com/files/inline-images/mindiana.gif";
+      displayResult.innerHTML = "Indiana bests fits you";
+      displayResult.appendChild(state1);
     }
     else if (totalScore <= 6){
       displayResult.innerHTML = "Minnesota bests fits you";
-      imgSrc.src = "https://besthotelshome.com/wp-content/uploads/2021/02/Tourist-Map-of-Minnesota.-Travel-and-Attractions.jpg";
+      displayResult.appendChild(state2);
     }
     else if (totalScore <= 8){
       displayResult.innerHTML = "New York bests fits you";
-      imgSrc.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/New_York_regions_map.png/1200px-New_York_regions_map.png";
+      displayResult.appendChild(state3);
     }
     else if (totalScore <= 10){
-      display.Result.innerHTML = "Maryland bests fits you"; 
-      imgSrc.src = "https://saddlemt.com/assets/images/715dtrvyaol_sl1500_.jpg";
+      displayResult.innerHTML = "Maryland bests fits you"; 
+      displayResult.appendChild(state4);
     }
   };
 }
